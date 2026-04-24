@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix library-website run dev",
+    "build": "npm --prefix library-website run build",
+    "lint": "npm --prefix library-website run lint",
+    "preview": "npm --prefix library-website run preview"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.2.4"
+  }
+}

@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --font-heading: "Book Antiqua", "Palatino Linotype", Georgia, serif;
+  --font-body: "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 244, 0.92)),
+      linear-gradient(90deg, rgba(20, 83, 45, 0.04) 1px, transparent 1px),
+      linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+    background-size: auto, 32px 32px, 32px 32px;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.03em;
+  }
+
+  ::selection {
+    background: rgba(16, 185, 129, 0.25);
+  }
+}
+
+@layer components {
+  .book-card {
+    position: relative;
+    transition: transform 260ms ease;
+  }
+
+  .book-card-cover {
+    position: relative;
+    transform-origin: center;
+  }
+
+  .book-card-cover::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.95), transparent 32%),
+      radial-gradient(circle at 80% 18%, rgba(250, 204, 21, 0.85), transparent 30%),
+      radial-gradient(circle at 50% 100%, rgba(16, 185, 129, 0.95), transparent 38%);
+    opacity: 0;
+    transition: opacity 260ms ease, filter 260ms ease;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(22px);
+    border-radius: 2rem;
+  }
+
+  .book-card-image {
+    will-change: auto;
+  }
+
+  .book-card-copy {
+    transform-origin: top center;
+    transition: transform 260ms ease, color 260ms ease;
+  }
+
+  .book-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .book-card:hover .book-card-cover {
+    box-shadow:
+      0 0 0 2px rgba(255, 255, 255, 0.82),
+      0 0 0 5px rgba(56, 189, 248, 0.28),
+      0 0 28px rgba(56, 189, 248, 0.42),
+      0 0 42px rgba(250, 204, 21, 0.3),
+      0 0 58px rgba(16, 185, 129, 0.34),
+      0 22px 36px rgba(15, 23, 42, 0.18);
+  }
+
+  .book-card:hover .book-card-cover::before {
+    opacity: 1;
+    filter: blur(28px);
+  }
+
+  .book-card:hover .book-card-image {
+    transform: none;
+    filter: none;
+  }
+
+  .book-card:hover .book-card-copy {
+    transform: translateY(4px);
+  }
+}
