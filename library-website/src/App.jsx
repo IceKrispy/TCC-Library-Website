@@ -119,10 +119,6 @@ const gmailComposeLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encode
 function App() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-stone-100 text-slate-900">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] bg-[radial-gradient(circle_at_top_left,_rgba(20,83,45,0.22),_transparent_42%),radial-gradient(circle_at_top_right,_rgba(14,116,144,0.16),_transparent_34%),linear-gradient(180deg,_rgba(255,255,255,0.95),_rgba(245,245,244,0.92))]" />
-      <div className="pointer-events-none absolute left-[-8rem] top-32 h-72 w-72 rounded-full bg-emerald-200/40 blur-3xl" />
-      <div className="pointer-events-none absolute right-[-5rem] top-52 h-64 w-64 rounded-full bg-sky-200/40 blur-3xl" />
-
       <header className="relative border-b border-white/70 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-emerald-900 sm:px-6 lg:px-8">
           <span>Tagoloan Community College</span>
